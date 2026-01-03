@@ -9,6 +9,10 @@
 
 Website ini sekarang sudah siap deploy (Plug & Play) menggunakan Docker Compose.
 
+**🌐 Live Demo:** [https://restaurant.widifirmaan.web.id](https://restaurant.widifirmaan.web.id)
+
+
+
 ## 📋 Prasyarat
 
 Sebelum menjalankan project ini, pastikan PC atau Server Anda sudah terinstal:
