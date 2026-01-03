@@ -60,7 +60,7 @@ Berikut adalah file-file kunci dalam restorasi ini:
 Untuk membuat arsip ini berjalan di environment lokal (`localhost`), beberapa penyesuaian teknis telah dilakukan:
 
 1.  **Database URL Replacement**:
-    Seluruh link di database telah diubah dari domain lama `http://www.gksteak.com` menjadi `http://localhost:8080`.
+    Seluruh link di database telah diubah dari domain lama `http://www.gksteak.com` menjadi `http://localhost:8082`.
     
 2.  **Table Prefix Fix**:
     Backup asli menggunakan prefix database `wp2o_`. Konfigurasi WordPress disesuaikan secara manual karena environment variable standar tidak mendeteksi prefix ini.
