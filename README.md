@@ -15,9 +15,13 @@ Website ini sekarang sudah siap deploy (Plug & Play) menggunakan Docker Compose.
 
 Berikut adalah cuplikan tampilan dari website yang telah berhasil di-restore:
 
-| **Halaman Depan (Home)** | **Detail Postingan** |
+| **Halaman Depan (Home)** | **Daftar Menu** |
 | :---: | :---: |
-| [![Home](screenshots/home.png)](screenshots/home.png) | 
+| [![Home](screenshots/home.png)](screenshots/home.png) | [![Menu](screenshots/menu.png)](screenshots/menu.png) |
+| **Halaman Berita (News)** | **Detail Postingan** |
+| [![News](screenshots/news.png)](screenshots/news.png) | [![Post](screenshots/post_details.png)](screenshots/post_details.png) |
+| **Tentang Kami (About)** | **Halaman Login** |
+| [![About](screenshots/about.png)](screenshots/about.png) | [![Login](screenshots/login.png)](screenshots/login.png) | 
 
 ## 📋 Prasyarat
 
