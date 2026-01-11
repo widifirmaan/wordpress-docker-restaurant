@@ -10,7 +10,7 @@ services:
       WORDPRESS_DB_HOST: mariadb-root
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_PASSWORD: central_root_password
-      WORDPRESS_DB_NAME: wordpress_restaurant
+      WORDPRESS_DB_NAME: restaurant_db
     volumes:
       - .:/var/www/html
     networks:
