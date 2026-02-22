@@ -1,94 +1,106 @@
-# GKSteak Web (Archive Restoration)
+# 🥩 GKSteak Web - Legacy Restaurant Archive Restoration
 
-> **TENTANG PROJECT INI**
->
-> Project ini adalah **arsip website lama GKSteak** yang telah dihidupkan kembali (*revived*). 
-> Saya mencoba memulihkan website ini dari file backup lawas dan mengemasnya ke dalam environment **Docker**.
+**GKSteak Web Restoration** is a specialized project aimed at reviving and containerizing the archive of the original GKSteak website. This project breathes new life into a legacy codebase by packaging it into a modern, plug-and-play **Docker** environment, ensuring its preservation and ease of deployment.
+
+![Status](https://img.shields.io/badge/Status-Restored-success?style=for-the-badge)
+![WordPress](https://img.shields.io/badge/WordPress-5.8-blue?style=for-the-badge&logo=wordpress)
+![PHP](https://img.shields.io/badge/PHP-7.4-777BB4?style=for-the-badge&logo=php)
+![MariaDB](https://img.shields.io/badge/MariaDB-10.6-003545?style=for-the-badge&logo=mariadb)
+![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?style=for-the-badge&logo=docker)
 
 ---
 
-Website ini sekarang sudah siap deploy (Plug & Play) menggunakan Docker Compose.
+## 📸 Archive Showcase
 
-## 📸 Tampilan / Screenshots
+Explore the restored interface of the legacy GKSteak website through our gallery.
 
-Berikut adalah cuplikan tampilan dari website yang telah berhasil di-restore:
+| | |
+|:---:|:---:|
+| ![Home](screenshots/home.png)<br>**Homepage (Frontend)** | ![Menu](screenshots/menu.png)<br>**Restaurant Menu** |
+| ![About](screenshots/about.png)<br>**About Us** | ![Login](screenshots/login.png)<br>**Admin Dashboard Login** |
 
-| **Halaman Depan (Home)** | **Daftar Menu** |
-| :---: | :---: |
-| [![Home](screenshots/home.png)](screenshots/home.png) | [![Menu](screenshots/menu.png)](screenshots/menu.png) |
-| **Tentang Kami (About)** | **Halaman Login** |
-| [![About](screenshots/about.png)](screenshots/about.png) | [![Login](screenshots/login.png)](screenshots/login.png) | 
+---
 
-## 📋 Prasyarat
+## 🚀 Restoration Highlights
 
-Sebelum menjalankan project ini, pastikan PC atau Server Anda sudah terinstal:
+### 🛠️ Technical Fixes
+*   **Database URL Mapping**: Automatically transforms all legacy links from `gksteak.com` to `localhost:8082` for seamless local browsing.
+*   **Custom Table Prefix**: Engineered to support the original backup's unique `wp2o_` database prefix.
+*   **Hardcoded Configs**: Optimized `wp-config.php` for the specific restoration environment.
 
-*   [Docker Engine](https://docs.docker.com/engine/install/)
-*   [Docker Compose](https://docs.docker.com/compose/install/)
+### 🍱 UI/UX Enhancements
+*   **Menu Alignment**: Fixed menu titles to be perfectly centered for a cleaner aesthetic.
+*   **Currency Normalization**: Removed obsolete currency symbols from the menu items to maintain a modern look.
+*   *File Location*: `wp-content/plugins/food-and-drink-menu/fdm-templates/content/`
 
-## 🚀 Cara Menjalankan (Deployment)
+### 🔄 Persistence & Reliability
+*   **Auto-Initialization**: Database is automatically imported from `init.sql` upon first launch.
+*   **Self-Healing**: Containers are configured with `restart: always` to ensure uptime across crashes or reboots.
 
-Tidak perlu restore manual atau konfigurasi rumit. Database dan file sudah disiapkan.
+---
 
-1.  **Clone/Copy** folder project ini ke komputer/server Anda.
-2.  Buka terminal di dalam folder project.
-3.  Jalankan perintah:
+## 🛠 Tech Stack
 
+### Core Engine
+*   **CMS**: WordPress 5.8 (Classic Restoration)
+*   **Environment**: PHP 7.4 (Optimized for Legacy Compatibility)
+*   **Database**: MariaDB 10.6
+
+### Infrastructure
+*   **Containerization**: Docker & Docker Compose
+*   **Automation**: Custom SQL Initialization Scripts
+
+---
+
+## 📂 Project Structure
+
+```bash
+/
+├── docker-compose.yml   # Infrastructure as Code (Services definition)
+├── init.sql             # Legacy Database Dump (Auto-import)
+├── wp-config.php        # Core WordPress Configuration
+├── wp-content/          # Original Themes, Plugins, and Media Assets
+└── screenshots/         # Documentation Assets
+```
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+*   **Docker Engine**
+*   **Docker Compose**
+
+### Quick Launch
+1.  **Clone** this repository to your local machine.
+2.  **Navigate** to the project directory in your terminal.
+3.  **Run** the following command:
     ```bash
     docker compose up -d
     ```
+4.  **Wait** 1-2 minutes for the database initialization to complete.
 
-    *Perintah ini akan mendownload image (WordPress 5.8 & MariaDB), membuat container, dan otomatis mengimport database lama dari `init.sql`.*
+### Access Points
+*   **Frontend**: [http://localhost:8082](http://localhost:8082)
+*   **Admin Dashboard**: [http://localhost:8082/wp-admin](http://localhost:8082/wp-admin)
 
-4.  Tunggu sejenak (1-2 menit) untuk proses inisialisasi database.
-5.  Akses website melalui browser:
-    *   **Frontend**: [http://localhost:8082](http://localhost:8082)
-    *   **Dashboard Admin**: [http://localhost:8082/wp-admin](http://localhost:8082/wp-admin)
-
-## 🔑 Informasi Login
-
-Berikut adalah kredensial yang telah di-reset untuk akses admin:
-
+### 🔑 Credentials
 *   **Username**: `gksteak`
 *   **Password**: `gksteak123`
 
-## 📂 Struktur Project
-
-Berikut adalah file-file kunci dalam restorasi ini:
-
-*   **`docker-compose.yml`**: Konfigurasi server virtual. Menjalankan PHP 7.4 (WordPress 5.8) dan MariaDB 10.6.
-*   **`init.sql`**: Dump database hasil restorasi yang berisi seluruh postingan, page, dan pengaturan lama. File ini otomatis di-load saat container pertama kali dibuat.
-*   **`wp-config.php`**: File konfigurasi inti yang telah dimodifikasi (hardcoded table prefix `wp2o_`) menyesuaikan struktur database lama.
-*   **`wp-content/`**: Folder aset asli (Themes, Plugins, Uploads) yang terhubung langsung ke container.
-
-## 🛠️ Riwayat Modifikasi & Perbaikan
-
-Untuk membuat arsip ini berjalan di environment lokal (`localhost`), beberapa penyesuaian teknis telah dilakukan:
-
-1.  **Database URL Replacement**:
-    Seluruh link di database telah diubah dari domain lama `http://www.gksteak.com` menjadi `http://localhost:8082`.
-    
-2.  **Table Prefix Fix**:
-    Backup asli menggunakan prefix database `wp2o_`. Konfigurasi WordPress disesuaikan secara manual karena environment variable standar tidak mendeteksi prefix ini.
-
-3.  **Tweak Tampilan (Theme Customization)**:
-    Dilakukan sedikit modifikasi pada plugin/tema untuk kerapian:
-    *   Judul menu dibuat rata tengah (`text-align: center`).
-    *   Menghilangkan simbol mata uang `$` pada harga menu.
-    *   *Lokasi File*: `wp-content/plugins/food-and-drink-menu/fdm-templates/content/`
-
-4.  **Autorun (Start-on-Boot)**:
-    Container dikonfigurasi dengan `restart: always`. Artinya:
-    *   Jika container crash, ia akan restart otomatis.
-    *   Jika server/komputer di-reboot, **WordPress akan otomatis menyala** (selama service Docker diaktifkan pada sistem operasi).
+---
 
 ## ❓ Troubleshooting
 
-*   **Website tidak bisa dibuka?**
-    Cek status container dengan `docker ps`. Jika baru dijalankan, tunggu sebentar karena database sedang proses import.
-*   **Ingin reset database ke kondisi awal backup?**
-    Hapus volume database dan restart docker:
+*   **Service not responding?** Check status with `docker ps` or logs with `docker compose logs -f`.
+*   **Fresh Start?** To reset the environment to the original backup state:
     ```bash
     docker compose down -v
     docker compose up -d
     ```
+
+---
+
+## 👥 Authors
+
+Developed and Restored by **Widi Firmaan**.
